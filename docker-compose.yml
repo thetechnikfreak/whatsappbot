@@ -2,11 +2,9 @@ version: '3.8'
 
 services:
   whatsapp-mod-bot:
-    build: .
+    image: ghcr.io/thetechnikfreak/whatsappbot:latest
     container_name: whatsapp-mod-bot
     restart: unless-stopped
-    env_file:
-      - .env
     volumes:
       # Persist WhatsApp session data
       - .wwebjs_auth:/app/.wwebjs_auth
@@ -14,6 +12,9 @@ services:
       - ./data:/app/data
     environment:
       - NODE_ENV=production
+      - GROQ_API_KEY=
+      - SUPERADMIN_NUMBER=
+
       
 volumes:
   .wwebjs_auth:
