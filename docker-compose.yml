@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  whatsapp-mod-bot:
+    build: .
+    container_name: whatsapp-mod-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Persist WhatsApp session data
+      - .wwebjs_auth:/app/.wwebjs_auth
+      # Persist Bot configuration and stats
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      
+volumes:
+  .wwebjs_auth:

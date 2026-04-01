@@ -1,0 +1,19 @@
+{
+  "name": "whatsapp-mod-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Gruppen-Moderationsbot mit Gemini AI",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.7",
+    "groq-sdk": "^1.1.2",
+    "qrcode-terminal": "^0.12.0",
+    "sharp": "^0.34.5",
+    "whatsapp-web.js": "^1.26.1"
+  }
+}
